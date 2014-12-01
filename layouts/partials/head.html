@@ -1,0 +1,28 @@
+{{ partial "doctype.html" . }}
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Michael D. Henderson">
+  <meta name="Generator" content="Hugo (http://gohugo.io)">
+
+  <title>{{ .Title }}{{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="canonical" href="{{.Permalink}}">
+
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/jQuery.v1.7.2.min.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Octopress" type="application/atom+xml">
+  
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+{{ partial "google/analytics.html" . }}
+{{ partial "twitter/load.html" . }}
+  <link href="/favicon.png" rel="icon">
+</head>
+
