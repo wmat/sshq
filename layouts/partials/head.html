@@ -24,5 +24,17 @@
 {{ partial "google/analytics.html" . }}
 {{ partial "twitter/load.html" . }}
   <link href="/favicon.png" rel="icon">
-</head>
 
+{{ if isset .Site.Params "google" }}
+  {{ with .Site.Params.google }}
+    {{ if isset . "search_site" }}
+      <script type="text/javascript">
+        function setSearch () {
+          var el = document.getElementsByName('q')[0];
+          el.value = 'site:{{.search_site}} ' + el.value;
+        }
+      </script>
+    {{ end }}
+  {{ end }}
+{{ end }}
+</head>

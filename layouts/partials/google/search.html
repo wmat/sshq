@@ -2,9 +2,8 @@
 {{ if isset .Site.Params "google" }}
   {{ with .Site.Params.google }}
     {{ if isset . "search_site" }}
-      <form action="http://google.com/search" method="get">
+      <form action="http://google.com/search" method="get" onsubmit="setSearch()">
         <fieldset role="search">
-          <input type="hidden" name="q" value="site:{{.search_site}}" />
           <input class="search" type="text" name="q" results="0" placeholder="Search"/>
         </fieldset>
       </form>
