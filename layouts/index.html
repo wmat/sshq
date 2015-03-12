@@ -5,31 +5,16 @@
 <div id="main">
   <div id="content">
 
+    <!-- only posts go on the main page -->
+    {{ $paginator := .Paginate (where .Data.Pages "Section" "post") }}
     <div class="blog-index">
-{{ range first 5 .Data.Pages.ByDate.Reverse }}
-      <article>
-        <header>
-          <h1 class="entry-title"><a href="{{.Permalink}}">{{.Title}}</a></h1>
-          <p class="meta">
-            <time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" pubdate data-updated="true">{{ .Date.Format "January 2, 2006" }}</time>
-            &bull;
-            <a rel="bookmark" href="{{.Permalink}}">Permalink</a>
-          </p>
-        </header>
-        <div class="entry-content">
-          {{.Summary}}
-        </div>
-        <footer>
-          <a rel="full-article" href="{{.Permalink}}">Read on &rarr;</a>
-        </footer>
-      </article>
-{{ end }}
 
-      <div class="pagination">
-        <!-- <a class="prev" href="/post/page/2/">&larr; Older</a> -->
-        <a href="/post">Blog Archives</a>
-        <!-- <a class="next" href="/">Newer &rarr;</a> -->
-      </div>
+      {{ range $index, $page := .Paginator.Pages }}
+        {{ .Render "li" }}
+      {{ end }}
+
+      {{ partial "pagination.html" $paginator }}
+
     </div>
 
 {{ partial "page/sidebar.html" . }}

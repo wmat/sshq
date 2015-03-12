@@ -1,0 +1,4 @@
+<div class="pagination">
+  {{if .HasNext}}<a class="prev" href="{{ .Next.Url }}">&larr; Older</a>{{end}}
+  {{if .HasPrev}}<a class="next" href="{{ .Prev.Url }}">Newer &rarr; </a>{{end}}
+</div>
