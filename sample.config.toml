@@ -48,6 +48,7 @@ theme        = "sshq"
 	footer_powered_by   = "true"
 	footer_designed_by  = "true"
 	ga_tracking         = "true"
+  piwik_tracking      = "true"
 	twitter_follow      = "true"
 	twitter_recent      = "true"
 
@@ -60,6 +61,10 @@ theme        = "sshq"
 
 [Params.google.analytics]
 	account = "@@Your Google Analytics Account Name"
+
+[Params.piwik]
+piwik_url = "@@URL for your piwik installation (without http/https), e.g. piwik.domain.tld"
+site_number = id
 
 [Params.twitter]
 	account      = "@@Your Twitter Account Name"
