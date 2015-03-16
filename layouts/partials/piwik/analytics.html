@@ -1,0 +1,31 @@
+{{ "<!-- hugo: enter themes/sshq/partials/piwik/analytics.html -->" | safeHtml }}
+{{ if isset .Site.Params "piwik" }}
+    {{ with .Site.Params }}
+        {{ if and (isset .piwik "site_number" ) (isset .piwik "piwik_url" ) }}
+            {{ $site_number := .piwik.site_number }}
+            {{ $site_url := .Site.Base.Url }}
+            {{ $piwik_url := .piwik.piwik_url }}
+
+            {{ with .theme.pw_tracking }}
+
+                <!-- Piwik -->
+                <script type="text/javascript">
+                 var _paq = _paq || [];
+                 _paq.push(['trackPageView']);
+                 _paq.push(['enableLinkTracking']);
+                 (function() {
+                     var u = "//{{ $piwik_url }}/";
+                     _paq.push(['setTrackerUrl', u+'piwik.php']);
+                     _paq.push(['setSiteId', {{$site_number}}]);
+                     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                 })();
+                </script>
+                <noscript><p><img src="//{{ $piwik_url }}/piwik.php?idsite={{$site_number}}" style="border:0;" alt="" /></p></noscript>
+                <!-- End Piwik Code -->
+                
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ "<!-- hugo: leave themes/sshq/partials/piwik/analytics.html -->" | safeHtml }}
