@@ -3,11 +3,9 @@
     {{ with .Site.Params }}
         {{ if and (isset .piwik "site_number" ) (isset .piwik "piwik_url" ) }}
             {{ $site_number := .piwik.site_number }}
-            {{ $site_url := .Site.Base.Url }}
             {{ $piwik_url := .piwik.piwik_url }}
 
-            {{ with .theme.pw_tracking }}
-
+            {{ with .theme.piwik_tracking }}
                 <!-- Piwik -->
                 <script type="text/javascript">
                  var _paq = _paq || [];
@@ -23,7 +21,6 @@
                 </script>
                 <noscript><p><img src="//{{ $piwik_url }}/piwik.php?idsite={{$site_number}}" style="border:0;" alt="" /></p></noscript>
                 <!-- End Piwik Code -->
-                
             {{ end }}
         {{ end }}
     {{ end }}
