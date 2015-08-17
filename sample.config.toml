@@ -12,8 +12,8 @@
 #       of 72dpi.
 #
 #############################################################################
-# @@ update baseurl for your production site and languageCode if needed
-baseurl      = "http://localhost:1313"
+# @@ update BaseURL for your production site and languageCode if needed
+BaseURL      = "http://localhost:1313"
 languageCode = "en-us"
 title        = "@@Your Site Title"
 theme        = "sshq"

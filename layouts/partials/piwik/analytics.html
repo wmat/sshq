@@ -1,4 +1,4 @@
-{{ "<!-- hugo: enter themes/sshq/partials/piwik/analytics.html -->" | safeHtml }}
+{{ "<!-- hugo: enter themes/sshq/partials/piwik/analytics.html -->" | safeHTML }}
 {{ if isset .Site.Params "piwik" }}
     {{ with .Site.Params }}
         {{ if and (isset .piwik "site_number" ) (isset .piwik "piwik_url" ) }}
@@ -25,4 +25,4 @@
         {{ end }}
     {{ end }}
 {{ end }}
-{{ "<!-- hugo: leave themes/sshq/partials/piwik/analytics.html -->" | safeHtml }}
+{{ "<!-- hugo: leave themes/sshq/partials/piwik/analytics.html -->" | safeHTML }}

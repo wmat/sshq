@@ -1,4 +1,4 @@
-{{ "<!-- hugo: enter themes/sshq/partials/twitter/recent.html -->" | safeHtml }}
+{{ "<!-- hugo: enter themes/sshq/partials/twitter/recent.html -->" | safeHTML }}
 {{ with .Site.Params }}
   {{ if and (isset . "twitter") (isset .twitter "ut_widget_id") }}
     {{ $ut_widget_id := .twitter.ut_widget_id }}
@@ -43,4 +43,4 @@
     {{ end }}
   {{ end }}
 {{ end }}
-{{ "<!-- hugo: leave themes/sshq/partials/twitter/recent.html -->" | safeHtml }}
+{{ "<!-- hugo: leave themes/sshq/partials/twitter/recent.html -->" | safeHTML }}

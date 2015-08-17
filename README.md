@@ -6,7 +6,7 @@ I've included "sample.config.toml" to help you with the setup.
 The most important steps are:
 
 1. Tell Hugo to use the theme.
-2. Set the baseurl for your web site.
+2. Set the BaseURL for your web site.
 3. Change the title of the web site.
 4. Add in your social media account information (or turn it off).
 5. Set up Google Analytics for tracking (or turn it off).

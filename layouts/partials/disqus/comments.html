@@ -1,4 +1,4 @@
-{{ "<!-- hugo: enter themes/sshq/partials/disqus/comments.html -->" | safeHtml }}
+{{ "<!-- hugo: enter themes/sshq/partials/disqus/comments.html -->" | safeHTML }}
 {{ with .Site.Params }}
   {{ if and (isset . "disqus") (isset .disqus "shortname") }}
     {{ $shortname := .disqus.shortname }}
@@ -24,4 +24,4 @@
 	{{ end }}
   {{ end }}
 {{ end }}
-{{ "<!-- hugo: leave themes/sshq/partials/disqus/comments.html -->" | safeHtml }}
+{{ "<!-- hugo: leave themes/sshq/partials/disqus/comments.html -->" | safeHTML }}
