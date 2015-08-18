@@ -5,7 +5,9 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
     {{ range first 5 .Data.Pages.ByDate.Reverse }}
-      <li class="post"><a href="{{.Permalink}}">{{.Title}}</a></li>
+      {{ if eq .Type "post" }}
+	  <li class="post"><a href="{{.Permalink}}">{{.Title}}</a></li>
+	  	  {{end}}
     {{end}}
     </ul>
   </section>
