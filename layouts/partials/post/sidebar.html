@@ -11,8 +11,7 @@
 		</ul>
 	</section>
 {{ partial "twitter/recent.html" . }}
-{{ partial "disqus/recent.html" . }}
-{{ if (isset .Params "tags") }}
+{{ if (.Params.tags) }}
 	<section>
 		<h1>Related Tags</h1>
 		{{ range .Params.tags }}
@@ -20,7 +19,7 @@
 		{{ end }}
 	</section>
 {{ end }}
-{{ if (isset .Params "categories") }}
+{{ if (.Params.categories) }}
 	<section>
 		<h1>Related Categories</h1>
 		{{ range .Params.categories }}

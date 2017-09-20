@@ -12,7 +12,6 @@
     </ul>
   </section>
 {{ partial "twitter/recent.html" . }}
-{{ partial "disqus/recent.html" . }}
   <section>
     <h1>Tags</h1>
     {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
